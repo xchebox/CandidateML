@@ -1,9 +1,12 @@
-package com.example.candidateml
+package com.example.candidateml.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.candidateml.ui.main.MainFragment
+import com.example.candidateml.R
+import com.example.candidateml.ui.fragments.MainFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
