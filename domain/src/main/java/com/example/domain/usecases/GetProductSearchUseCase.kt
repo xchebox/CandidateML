@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class GetProductSearchUseCase @Inject constructor(private val productRepository: ProductRepository) :
     BaseUseCase<Unit, Single<List<Product>>> {
-    override fun execute(params: Unit?): Single<List<Product>> {
+    override suspend fun execute(params: Unit?): Single<List<Product>> {
         return productRepository.getProductSearch();
     }
 

@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class GetProductDetailsUseCase @Inject constructor(private val productRepository: ProductRepository) :
     BaseUseCase<String, Single<Product>> {
-    override fun execute(params: String?): Single<Product> {
+    override suspend fun execute(params: String?): Single<Product> {
         return productRepository.getProductDetails(params!!);
     }
 

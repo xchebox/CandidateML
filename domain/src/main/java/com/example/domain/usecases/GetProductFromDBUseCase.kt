@@ -6,7 +6,7 @@ import javax.inject.Inject
 
 class GetProductFromDBUseCase @Inject constructor(private val productDBRepository: ProductDBRepository) :
     BaseUseCase<String, Product> {
-    override fun execute(params: String?): Product {
+    override suspend fun execute(params: String?): Product {
         return productDBRepository.getProduct(params!!)
     }
 }

@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class InsertAllProductsToDBUseCase @Inject constructor(private val productDBRepository: ProductDBRepository) :
     BaseUseCase<List<Product>, Boolean> {
-    override fun execute(params: List<Product>?): Boolean {
+    override suspend fun execute(params: List<Product>?): Boolean {
         return try {
             productDBRepository.insertAll(params!!)
             true

@@ -4,6 +4,6 @@ import com.example.domain.entities.Product
 import io.reactivex.rxjava3.core.Single
 
 interface ProductDBRepository {
-    fun getProduct(productId: String): Product
-    fun insertAll(products: List<Product>)
+    suspend fun getProduct(productId: String): Product
+    suspend fun insertAll(products: List<Product>)
 }

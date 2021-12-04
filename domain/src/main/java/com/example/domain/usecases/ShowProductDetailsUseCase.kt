@@ -5,7 +5,7 @@ import javax.inject.Inject
 
 class ShowProductDetailsUseCase @Inject constructor() :
 BaseUseCase<String, Unit> {
-    override fun execute(params: String?): Unit {
+    override suspend fun execute(params: String?): Unit {
         print (params)
     }
 
