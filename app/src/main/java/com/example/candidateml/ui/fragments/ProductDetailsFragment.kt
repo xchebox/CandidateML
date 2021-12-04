@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.example.candidateml.R
+import com.example.candidateml.databinding.ProductDetailsFragmentBinding
 import com.example.candidateml.ui.viewmodels.ProductDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -17,19 +19,32 @@ class ProductDetailsFragment : Fragment() {
         fun newInstance() = ProductDetailsFragment()
     }
 
-    private lateinit var viewModel: ProductDetailsViewModel
+    private lateinit var binding: ProductDetailsFragmentBinding
+    private lateinit var mViewModel: ProductDetailsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.product_details_fragment, container, false)
+        binding = DataBindingUtil.inflate(
+            inflater,
+            R.layout.product_details_fragment,
+            container,
+            false
+        )
+        mViewModel = ViewModelProvider(this)[ProductDetailsViewModel::class.java]
+        binding.productDetailsViewModel = mViewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProductDetailsViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val productId = arguments?.getString("productId")
+        if (productId != null){
+            mViewModel.getProductDetailsFromDB(productId)
+        }
 
+    }
 }

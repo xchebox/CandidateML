@@ -7,9 +7,6 @@ import com.example.domain.entities.Product
 import javax.inject.Inject
 
 
-/**
- * A mapper to map the ShareDataModel from server to ShareDetailsModel in a presentable form.
- */
 class ProductMapper @Inject constructor() {
 
     fun toProduct(product: ProductEntity): Product {

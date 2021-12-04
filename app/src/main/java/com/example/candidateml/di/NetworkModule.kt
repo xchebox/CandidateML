@@ -4,14 +4,11 @@ import com.example.data.api.ApiService
 import com.example.data.mappers.ProductMapper
 import com.example.data.repositories.ApiServiceImpl
 import com.example.domain.repositories.ProductRepository
-import com.example.domain.usecases.GetProductSearchUseCase
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -59,7 +56,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun bindApiService(retrofit: Retrofit): ApiService {
+    fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
     }
 

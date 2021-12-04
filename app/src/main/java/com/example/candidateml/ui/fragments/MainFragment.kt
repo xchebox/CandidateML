@@ -28,7 +28,7 @@ class MainFragment : Fragment() {
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var binding: MainFragmentBinding;
+    private lateinit var binding: MainFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -43,7 +43,7 @@ class MainFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         val productAdapter = ProductListItemAdapter(ArrayList(), requireContext()){
-            startActivity(ProductDetailsActivity.createIntent(requireContext(), it))
+            startActivity(ProductDetailsActivity.newInstance(requireContext(), it))
         }
         val productRecyclerView: RecyclerView = binding.productRecyclerView
         productRecyclerView.layoutManager = GridLayoutManager(context, 2)

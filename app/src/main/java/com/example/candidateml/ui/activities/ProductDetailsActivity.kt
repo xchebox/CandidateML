@@ -13,8 +13,10 @@ import kotlinx.serialization.json.Json
 @AndroidEntryPoint
 class ProductDetailsActivity : AppCompatActivity() {
 
+    val mBundle = Bundle()
+
     companion object {
-        fun createIntent(context: Context, product: Product) : Intent {
+        fun newInstance(context: Context, product: Product) : Intent {
             val intent = Intent(context, ProductDetailsActivity::class.java )
             val bundle = Bundle()
             val serializedProduct = Json.encodeToString(Product.serializer(), product)
@@ -28,9 +30,16 @@ class ProductDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_details_activity)
+        val productData = intent.extras?.getSerializable("product")
+        productData?.let {
+            val product = Json.decodeFromString(Product.serializer(), it.toString())
+            mBundle.putString("productId", product.id)
+        }
+        val fragment = ProductDetailsFragment.newInstance()
+        fragment.arguments = mBundle
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, ProductDetailsFragment.newInstance())
+                .replace(R.id.container, fragment)
                 .commitNow()
         }
     }
