@@ -17,6 +17,16 @@
         <item name="android:toolbarStyle">@style/Theme.CandidateML.Toolbar</item>
     </style>
 
+    <style name="Theme.CandidateML.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimationDuration">200</item>
+
+        // Set the theme of the Activity that directly follows your splash screen.
+        <item name="postSplashScreenTheme">@style/Theme.CandidateML</item>  # Required.
+    </style>
+
     <!-- Toolbar style. -->
     <style name="Theme.CandidateML.Toolbar" parent="Theme.CandidateML">
         <item name="android:background">@color/primary_color</item>

@@ -29,4 +29,9 @@
     <style name="Theme.CandidateML.ProductListItem.Inner" parent="Theme.CandidateML.ProductListItem">
         <item name="android:background">@color/white</item>
     </style>
+
+    <style name="ThemeOverlay.CandidateML.FullscreenContainer" parent="">
+        <item name="fullscreenBackgroundColor">@color/light_blue_900</item>
+        <item name="fullscreenTextColor">@color/light_blue_A400</item>
+    </style>
 </resources>

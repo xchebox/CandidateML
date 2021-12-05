@@ -36,6 +36,9 @@ class ProductDetailsFragment : Fragment() {
         mViewModel = ViewModelProvider(this)[ProductDetailsViewModel::class.java]
         mBinding.productDetailsViewModel = mViewModel
         mBinding.lifecycleOwner = viewLifecycleOwner
+        mViewModel.product.observe(viewLifecycleOwner) {
+            mViewModel.loadImage(requireContext(), it.thumbnail!!, mBinding.productDetailsImage)
+        }
 
         initToolbar()
 
@@ -45,7 +48,7 @@ class ProductDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val productId = arguments?.getString("productId")
-        if (productId != null){
+        if (productId != null) {
             mViewModel.getProductDetailsFromDB(productId)
         }
 
