@@ -10,5 +10,7 @@ data class ProductEntity(
     @SerializedName("title")
     val title: String? = null,
     @SerializedName("thumbnail")
-    val thumbnail: String? = null
+    val thumbnail: String? = null,
+    @SerializedName("price")
+    val price: Int? = null
 )

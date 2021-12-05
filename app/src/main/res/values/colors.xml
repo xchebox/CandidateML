@@ -7,8 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-    <color name="primary_background">#fefff7</color>
+    <color name="gray">#BFBFBF</color>
+    <color name="cream">#fefff7</color>
+    <color name="lynch">#6C7A89</color>
     <color name="primary_blue">#7da0ff</color>
+    <color name="primary_accent">@color/purple_700</color>
 
+    <color name="primary_background">@color/gray</color>
+    <color name="primary_color">@color/lynch</color>
+    <color name="primary_text_color">@color/black</color>
 </resources>

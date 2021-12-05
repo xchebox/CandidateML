@@ -12,5 +12,6 @@ data class ProductDBEntity
     @ColumnInfo(name = "site_id")
     val siteId: String,
     val title: String,
-    val thumbnail: String
+    val thumbnail: String,
+    val price: Int
 )

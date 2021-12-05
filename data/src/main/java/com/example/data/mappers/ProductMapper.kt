@@ -14,7 +14,8 @@ class ProductMapper @Inject constructor() {
             product.id ?: "-1",
             product.siteId ?: "",
             product.title ?: "",
-            product.thumbnail ?: ""
+            product.thumbnail ?: "",
+            product.price ?: 0
         )
     }
 

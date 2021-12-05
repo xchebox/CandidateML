@@ -10,7 +10,8 @@ class ProductDBMapper @Inject constructor() {
             productDBEntity.id ?: "-1",
             productDBEntity.siteId ?: "",
             productDBEntity.title ?: "",
-            productDBEntity.thumbnail ?: ""
+            productDBEntity.thumbnail ?: "",
+            productDBEntity.price ?: 0
         )
     }
 
@@ -25,7 +26,8 @@ class ProductDBMapper @Inject constructor() {
             product.id ?: "-1",
             product.siteId ?: "",
             product.title ?: "",
-            product.thumbnail ?: ""
+            product.thumbnail ?: "",
+            product.price ?: 0 //TODO validate what to do if price is null
         )
     }
 

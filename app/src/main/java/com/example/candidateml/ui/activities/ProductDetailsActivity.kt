@@ -13,7 +13,7 @@ import kotlinx.serialization.json.Json
 @AndroidEntryPoint
 class ProductDetailsActivity : AppCompatActivity() {
 
-    val mBundle = Bundle()
+    private val mBundle = Bundle()
 
     companion object {
         fun newInstance(context: Context, product: Product) : Intent {

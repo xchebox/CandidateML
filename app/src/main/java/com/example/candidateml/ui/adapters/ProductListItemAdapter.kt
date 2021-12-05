@@ -18,6 +18,7 @@ class ProductListItemAdapter(private val mDataSet: ArrayList<Product>, private v
     class ProductViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView = view.findViewById(R.id.title_product_list_item)
         val image: ImageView = view.findViewById(R.id.image_product_list_item)
+        val price: TextView = view.findViewById(R.id.price_product_list_item)
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ProductViewHolder {
@@ -30,6 +31,7 @@ class ProductListItemAdapter(private val mDataSet: ArrayList<Product>, private v
     override fun onBindViewHolder(viewHolder: ProductViewHolder, position: Int) {
         val product = mDataSet[position]
         viewHolder.title.text = product.title
+        viewHolder.price.text = "$".plus(product.price.toString())
         viewHolder.itemView.setOnClickListener {
             mOnClick(product)
         }
@@ -38,8 +40,13 @@ class ProductListItemAdapter(private val mDataSet: ArrayList<Product>, private v
 
     override fun getItemCount() = mDataSet.size
 
-    fun updateList(dataSet: ArrayList<Product>){
+    fun clearList(){
+        val length = mDataSet.size
         this.mDataSet.clear()
+        notifyItemRangeRemoved(0, length)
+    }
+
+    fun updateList(dataSet: ArrayList<Product>){
         this.mDataSet.addAll(dataSet)
         this.notifyItemRangeInserted(0, dataSet.size)
     }

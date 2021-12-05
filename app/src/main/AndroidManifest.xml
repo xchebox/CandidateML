@@ -15,6 +15,9 @@
         android:theme="@style/Theme.CandidateML"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.activities.SearchProductActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activities.ProductDetailsActivity"
             android:exported="false" />
         <activity

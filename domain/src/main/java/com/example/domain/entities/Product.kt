@@ -12,7 +12,9 @@ data class Product(
     @SerialName("title")
     val title: String? = null,
     @SerialName("thumbnail")
-    val thumbnail: String? = null
+    val thumbnail: String? = null,
+    @SerialName("price")
+    val price: Int? = null
 )
 
 data class ProductList(
