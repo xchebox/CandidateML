@@ -12,5 +12,5 @@ data class ProductEntity(
     @SerializedName("thumbnail")
     val thumbnail: String? = null,
     @SerializedName("price")
-    val price: Int? = null
+    val price: Double? = null
 )

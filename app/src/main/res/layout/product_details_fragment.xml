@@ -20,8 +20,7 @@
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fitsSystemWindows="true"
-            android:background="@null">
+            android:fitsSystemWindows="true">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/toolbar_layout"
@@ -52,15 +51,14 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_collapseMode="pin"
-                    android:background="@null"
-                    app:popupTheme="@style/Widget.AppCompat.ActionBar">
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:menu="@menu/toolbar_menu"
+                    style="@style/Theme.CandidateML.Toolbar">
 
                 </androidx.appcompat.widget.Toolbar>
 
@@ -82,13 +80,13 @@
                     android:id="@+id/product_details_price"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@{productDetailsViewModel.product.price}"
+                    android:text="@{productDetailsViewModel.product.priceText}"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="26dp"
                     android:textSize="20sp"
                     android:textStyle="bold">
 

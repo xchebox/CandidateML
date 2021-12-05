@@ -3,6 +3,7 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
       <module name="CandidateML.app" target="11" />
+      <module name="CandidateML.cache" target="11" />
       <module name="CandidateML.data" target="11" />
     </bytecodeTargetLevel>
   </component>

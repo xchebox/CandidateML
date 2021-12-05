@@ -15,12 +15,15 @@
         <item name="android:background">@color/primary_background</item>
         <item name="android:textColor">@color/primary_text_color</item>
         <item name="android:toolbarStyle">@style/Theme.CandidateML.Toolbar</item>
+        <item name="actionBarStyle">@style/Theme.CandidateML.Toolbar</item>
+        <item name="progressBarStyle">@style/Theme.CandidateML.ProgressBar</item>
     </style>
 
+    <!-- Splash screen -->
     <style name="Theme.CandidateML.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
 
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_background</item>
         <item name="windowSplashScreenAnimationDuration">200</item>
 
         // Set the theme of the Activity that directly follows your splash screen.
@@ -32,10 +35,16 @@
         <item name="android:background">@color/primary_color</item>
         <item name="android:textColor">@color/primary_text_color</item>
     </style>
+
+    <style name="Theme.CandidateML.ProgressBar" parent="Theme.CandidateML.ProductListItem">
+        <item name="android:indeterminateTint">@color/primary_color</item>
+    </style>
+
     <!-- Product item list -->
     <style name="Theme.CandidateML.ProductListItem" parent="Theme.CandidateML">
         <item name="android:background">@color/primary_background</item>
     </style>
+
     <!-- Product item list inner part a.k.a. image product container -->
     <style name="Theme.CandidateML.ProductListItem.Inner" parent="Theme.CandidateML.ProductListItem">
         <item name="android:background">@color/white</item>

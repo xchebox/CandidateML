@@ -10,3 +10,4 @@ rootProject.name = "CandidateML"
 include ':app'
 include ':domain'
 include ':data'
+include ':cache'

@@ -1,4 +1,4 @@
-package com.example.data.db.entities
+package com.example.cache.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -9,9 +9,9 @@ data class ProductDBEntity
     (
     @PrimaryKey
     val id: String,
-    @ColumnInfo(name = "site_id")
     val siteId: String,
     val title: String,
     val thumbnail: String,
-    val price: Int
+    val price: Double,
+    val priceText: String,
 )

@@ -1,7 +1,6 @@
 package com.example.data.mappers
 
 import com.example.data.entities.ProductEntity
-import com.example.data.entities.SearchProductResponse
 import com.example.domain.entities.Product
 
 import javax.inject.Inject
@@ -10,12 +9,14 @@ import javax.inject.Inject
 class ProductMapper @Inject constructor() {
 
     fun toProduct(product: ProductEntity): Product {
+        val price = product.price ?: 0.0
         return Product(
-            product.id ?: "-1",
+            product.id,
             product.siteId ?: "",
             product.title ?: "",
             product.thumbnail ?: "",
-            product.price ?: 0
+            price,
+            "$".plus(price.toString())
         )
     }
 

@@ -45,7 +45,7 @@ class MainFragment : Fragment() {
     }
 
     private fun initToolbar() {
-        val appToolbar = binding.toolbar as Toolbar
+        val appToolbar = binding.toolbar.toolbar
         appToolbar.inflateMenu(R.menu.toolbar_menu)
         (activity as AppCompatActivity).setSupportActionBar(appToolbar)
         setHasOptionsMenu(true)

@@ -15,23 +15,44 @@
         <item name="android:background">@color/primary_background</item>
         <item name="android:textColor">@color/primary_text_color</item>
         <item name="android:toolbarStyle">@style/Theme.CandidateML.Toolbar</item>
+        <item name="actionBarStyle">@style/Theme.CandidateML.Toolbar</item>
+        <item name="progressBarStyle">@style/Theme.CandidateML.ProgressBar</item>
     </style>
+
+    <!-- Splash screen -->
+    <style name="Theme.CandidateML.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_background</item>
+        <item name="windowSplashScreenAnimationDuration">200</item>
+
+        // Set the theme of the Activity that directly follows your splash screen.
+        <item name="postSplashScreenTheme">@style/Theme.CandidateML</item>  # Required.
+    </style>
+
     <!-- Toolbar style. -->
     <style name="Theme.CandidateML.Toolbar" parent="Theme.CandidateML">
         <item name="android:background">@color/primary_color</item>
         <item name="android:textColor">@color/primary_text_color</item>
     </style>
+
+    <!-- Overlay -->
+    <style name="Theme.CandidateML.Overlay" parent="Theme.CandidateML">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- Progress bar -->
+    <style name="Theme.CandidateML.ProgressBar" parent="Theme.CandidateML.Overlay">
+        <item name="android:indeterminateTint">@color/primary_color</item>
+    </style>
+
     <!-- Product item list -->
     <style name="Theme.CandidateML.ProductListItem" parent="Theme.CandidateML">
         <item name="android:background">@color/primary_background</item>
     </style>
+
     <!-- Product item list inner part a.k.a. image product container -->
     <style name="Theme.CandidateML.ProductListItem.Inner" parent="Theme.CandidateML.ProductListItem">
         <item name="android:background">@color/white</item>
-    </style>
-
-    <style name="ThemeOverlay.CandidateML.FullscreenContainer" parent="">
-        <item name="fullscreenBackgroundColor">@color/light_blue_900</item>
-        <item name="fullscreenTextColor">@color/light_blue_A400</item>
     </style>
 </resources>

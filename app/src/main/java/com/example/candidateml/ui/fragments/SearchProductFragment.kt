@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -42,6 +43,11 @@ class SearchProductFragment : Fragment() {
         mViewModel = ViewModelProvider(this)[SearchProductViewModel::class.java]
         mBinding.searchProductViewModel = mViewModel
         mBinding.lifecycleOwner = viewLifecycleOwner
+
+        mViewModel.mLoading.observe(viewLifecycleOwner){
+            mBinding.progressBar.progressBar.isVisible = it
+            mBinding.progressBar.progressBar.isIndeterminate = it
+        }
 
         initProductListAdapter()
 

@@ -1,5 +1,6 @@
 package com.example.candidateml.ui.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -16,16 +17,23 @@ class SearchProductViewModel @Inject constructor(
     private val getProductSearchUseCase: GetProductSearchUseCase,
     private val insertAllProductsToDBUseCase: InsertAllProductsToDBUseCase,
 ) : ViewModel() {
+    private val TAG = "SearchProductViewModel"
+    val mLoading = MutableLiveData(false)
     val productList = MutableLiveData<List<Product>>()
 
 
     fun getProductResult(query: String) {
+        mLoading.postValue(true)
         viewModelScope.launch {
-            getProductSearchUseCase.execute(null).subscribeOn(Schedulers.io())
+            getProductSearchUseCase.execute(query).subscribeOn(Schedulers.io())
                 .subscribe({
                     productList.postValue(it)
                     addAllToDB(it)
-                }, {})
+                    mLoading.postValue(false);
+                }, {
+                    it.message?.let { it1 -> Log.e(TAG, it1) }
+                    mLoading.postValue(false)
+                })
         }
     }
 
