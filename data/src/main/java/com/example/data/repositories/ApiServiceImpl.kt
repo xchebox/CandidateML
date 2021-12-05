@@ -12,14 +12,14 @@ class ApiServiceImpl @Inject constructor(
     private val apiService: ApiService,
     private val productMapper : ProductMapper
 ): ProductRepository {
-    override fun getProductSearch(): Single<List<Product>> {
-        return apiService.searchProduct().map {
+    override fun getProductSearch(query: String): Single<List<Product>> {
+        return apiService.searchProduct(query).map {
             productMapper.toProductList(it.results)
         }
     }
 
     override fun getProductDetails(productId: String): Single<Product> {
-        return apiService.searchProduct(productId).map {
+        return apiService.getProduct(productId).map {
             productMapper.toProduct(it.results[0])
         }
     }

@@ -4,6 +4,6 @@ import com.example.domain.entities.Product
 import io.reactivex.rxjava3.core.Single
 
 interface ProductRepository {
-    fun getProductSearch(): Single<List<Product>>
-    fun getProductDetails(productOd: String): Single<Product>
+    fun getProductSearch(query: String): Single<List<Product>>
+    fun getProductDetails(productId: String): Single<Product>
 }

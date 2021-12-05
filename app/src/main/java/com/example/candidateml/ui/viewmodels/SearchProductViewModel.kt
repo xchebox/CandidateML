@@ -19,7 +19,7 @@ class SearchProductViewModel @Inject constructor(
     val productList = MutableLiveData<List<Product>>()
 
 
-    fun getProductResult() {
+    fun getProductResult(query: String) {
         viewModelScope.launch {
             getProductSearchUseCase.execute(null).subscribeOn(Schedulers.io())
                 .subscribe({

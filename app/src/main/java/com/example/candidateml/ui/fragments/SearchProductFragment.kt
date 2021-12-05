@@ -48,7 +48,7 @@ class SearchProductFragment : Fragment() {
         mBinding.searchProductSearchbar.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 mProductAdapter.clearList() //TODO eusebio move this to the model view
-                mViewModel.getProductResult()
+                mViewModel.getProductResult(query!!)
                 return true
             }
 
