@@ -9,8 +9,11 @@ import com.example.domain.usecases.GetProductSearchUseCase
 import com.example.domain.usecases.InsertAllProductsToDBUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.rxjava3.schedulers.Schedulers
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import kotlin.coroutines.CoroutineContext
 
 @HiltViewModel
 class SearchProductViewModel @Inject constructor(
@@ -20,7 +23,6 @@ class SearchProductViewModel @Inject constructor(
     private val TAG = "SearchProductViewModel"
     val mLoading = MutableLiveData(false)
     val productList = MutableLiveData<List<Product>>()
-
 
     fun getProductResult(query: String) {
         mLoading.postValue(true)
