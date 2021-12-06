@@ -18,6 +18,7 @@
         <item name="actionBarStyle">@style/Theme.CandidateML.Toolbar</item>
         <item name="progressBarStyle">@style/Theme.CandidateML.ProgressBar</item>
         <item name="collapsingToolbarLayoutStyle">@style/Theme.CandidateML.CollapsingToolbar</item>
+        <item name="android:actionBarWidgetTheme">@style/Theme.CandidateML.Toolbar</item>
     </style>
 
     <!-- Splash screen -->
@@ -29,6 +30,16 @@
 
         // Set the theme of the Activity that directly follows your splash screen.
         <item name="postSplashScreenTheme">@style/Theme.CandidateML</item>  # Required.
+    </style>
+
+    <!-- welcome style -->
+    <style name="Theme.CandidateML.Welcome" parent="Theme.CandidateML">
+        <item name="android:background">@color/white</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">center</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <!-- Toolbar style. -->

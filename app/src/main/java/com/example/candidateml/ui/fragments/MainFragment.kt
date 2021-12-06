@@ -22,30 +22,34 @@ class MainFragment : Fragment() {
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var binding: MainFragmentBinding
-    private lateinit var mainViewModel: MainViewModel
+    private lateinit var  mBinding: MainFragmentBinding
+    private lateinit var mViewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(
+        mBinding = DataBindingUtil.inflate(
             inflater,
             R.layout.main_fragment,
             container,
             false
         )
-        mainViewModel = ViewModelProvider(this)[MainViewModel::class.java]
-        binding.mainViewModel = mainViewModel
-        binding.lifecycleOwner = viewLifecycleOwner
+        mViewModel = ViewModelProvider(this)[MainViewModel::class.java]
+        mBinding.mainViewModel = mViewModel
+        mBinding.lifecycleOwner = viewLifecycleOwner
+
+        mBinding.mainSearchBtn.setOnClickListener(){
+            mViewModel.openSearchActivity(requireContext())
+        }
 
         initToolbar()
 
-        return binding.root
+        return mBinding.root
     }
 
     private fun initToolbar() {
-        val appToolbar = binding.toolbar.toolbar
+        val appToolbar = mBinding.toolbar.toolbar
         appToolbar.inflateMenu(R.menu.toolbar_menu)
         (activity as AppCompatActivity).setSupportActionBar(appToolbar)
         setHasOptionsMenu(true)

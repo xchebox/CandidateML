@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">CandidateML</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <!-- main -->
+    <string name="welcome_message">Bienvenido!\n Para comenzar a usar la aplicación busca un producto.</string>
+    <string name="search_button">Buscar un producto</string>
 </resources>

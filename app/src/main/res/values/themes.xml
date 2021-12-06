@@ -19,7 +19,6 @@
         <item name="progressBarStyle">@style/Theme.CandidateML.ProgressBar</item>
         <item name="collapsingToolbarLayoutStyle">@style/Theme.CandidateML.CollapsingToolbar</item>
         <item name="android:actionBarWidgetTheme">@style/Theme.CandidateML.Toolbar</item>
-
     </style>
 
     <!-- Splash screen -->
@@ -33,11 +32,20 @@
         <item name="postSplashScreenTheme">@style/Theme.CandidateML</item>  # Required.
     </style>
 
+    <!-- welcome style -->
+    <style name="Theme.CandidateML.Welcome" parent="Theme.CandidateML">
+        <item name="android:background">@color/white</item>
+        <item name="cardBackgroundColor">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAlignment">center</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
     <!-- Toolbar style. -->
     <style name="Theme.CandidateML.Toolbar" parent="Theme.CandidateML">
-        <item name="android:background">@color/black</item>
+        <item name="android:background">@color/primary_color</item>
         <item name="android:textColor">@color/primary_text_color</item>
-        <item name="android:itemBackground">@color/black</item>
     </style>
 
     <!-- Popup style. -->
@@ -52,6 +60,11 @@
 
     <!-- Toolbar overlay -->
     <style name="Theme.CandidateML.Toolbar.Overlay" parent="Theme.CandidateML.Toolbar">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- Overlay -->
+    <style name="Theme.CandidateML.Overlay" parent="Theme.CandidateML">
         <item name="android:background">@android:color/transparent</item>
     </style>
 
