@@ -67,6 +67,11 @@ class SearchProductFragment : Fragment() {
         return mBinding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mBinding.searchProductSearchbar.requestFocus()
+    }
+
     private fun initProductListAdapter(){
         mProductAdapter = ProductListItemAdapter(ArrayList(), requireContext()) {
             startActivity(ProductDetailsActivity.newInstance(requireContext(), it))

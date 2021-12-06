@@ -85,6 +85,8 @@ class ProductUseCasesTesting {
     }
 
 
+    //TODO check this. could not make this test work. Tried different things but the live data is always returning
+    // the value as null
     /**
      * Should return the product correctly
      */

@@ -25,6 +25,7 @@
             android:queryHint="@string/search_view_hint"
             android:focusable="true"
             android:iconifiedByDefault="false"
+            android:focusedByDefault="true"
             android:theme="@style/Theme.CandidateML.Toolbar"/>
 
         <androidx.recyclerview.widget.RecyclerView
