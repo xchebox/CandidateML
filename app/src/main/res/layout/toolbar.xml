@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:theme="@style/Theme.CandidateML.Toolbar"
+    app:popupTheme="@style/Theme.CandidateML.Toolbar.Popup"
     app:layout_collapseMode="pin"
     app:layout_constraintTop_toTopOf="parent"
-    app:menu="@menu/toolbar_menu"
-    app:popupTheme="@style/Widget.AppCompat.ActionBar">
+    app:menu="@menu/toolbar_menu">
 
 </androidx.appcompat.widget.Toolbar>

@@ -17,6 +17,9 @@
         <item name="android:toolbarStyle">@style/Theme.CandidateML.Toolbar</item>
         <item name="actionBarStyle">@style/Theme.CandidateML.Toolbar</item>
         <item name="progressBarStyle">@style/Theme.CandidateML.ProgressBar</item>
+        <item name="collapsingToolbarLayoutStyle">@style/Theme.CandidateML.CollapsingToolbar</item>
+        <item name="android:actionBarWidgetTheme">@style/Theme.CandidateML.Toolbar</item>
+
     </style>
 
     <!-- Splash screen -->
@@ -32,10 +35,27 @@
 
     <!-- Toolbar style. -->
     <style name="Theme.CandidateML.Toolbar" parent="Theme.CandidateML">
-        <item name="android:background">@color/primary_color</item>
+        <item name="android:background">@color/black</item>
         <item name="android:textColor">@color/primary_text_color</item>
+        <item name="android:itemBackground">@color/black</item>
     </style>
 
+    <!-- Popup style. -->
+    <style name="Theme.CandidateML.Toolbar.Popup" parent="Theme.CandidateML.Toolbar">
+        <item name="background">@android:color/transparent</item>
+    </style>
+
+    <!-- Collapsing toolbar -->
+    <style name="Theme.CandidateML.CollapsingToolbar" parent="Theme.CandidateML">
+        <item name="contentScrim">@color/primary_color</item>
+    </style>
+
+    <!-- Toolbar overlay -->
+    <style name="Theme.CandidateML.Toolbar.Overlay" parent="Theme.CandidateML.Toolbar">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- Progress bar -->
     <style name="Theme.CandidateML.ProgressBar" parent="Theme.CandidateML.ProductListItem">
         <item name="android:indeterminateTint">@color/primary_color</item>
     </style>

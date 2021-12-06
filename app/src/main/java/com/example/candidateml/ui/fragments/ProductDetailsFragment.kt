@@ -58,6 +58,7 @@ class ProductDetailsFragment : Fragment() {
         setHasOptionsMenu(true)
         val appToolbar = mBinding.toolbar as Toolbar
         appToolbar.inflateMenu(R.menu.toolbar_menu)
+        appToolbar.title = ""
         (activity as AppCompatActivity).setSupportActionBar(appToolbar)
     }
 
