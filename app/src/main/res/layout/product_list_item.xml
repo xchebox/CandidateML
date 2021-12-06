@@ -32,7 +32,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/image_product_list_item"
@@ -47,7 +46,6 @@
             app:layout_constraintStart_toStartOf="@id/image_product_list_item"
             app:layout_constraintTop_toBottomOf="@id/price_product_list_item"
             android:layout_marginBottom="8dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
             android:ellipsize="end"
             android:maxLines="@integer/product_list_max_lines"
             android:lines="@integer/product_list_max_lines"/>

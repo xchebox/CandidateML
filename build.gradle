@@ -5,6 +5,8 @@ buildscript {
         room_version = '2.4.0-alpha03'
         kotlinx_coroutines_version = '1.5.0'
         archTestingVersion = '1.1.1'
+        guava_version = '27.0.1-android'
+        splash_screen_version = '1.0.0-alpha02'
     }
     repositories {
         google()

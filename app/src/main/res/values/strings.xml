@@ -5,4 +5,7 @@
     <!-- main -->
     <string name="welcome_message">Bienvenido!\n Para comenzar a usar la aplicación busca un producto.</string>
     <string name="search_button">Buscar un producto</string>
+
+    <!-- Search -->
+    <string name="search_view_hint">Buscar un producto</string>
 </resources>

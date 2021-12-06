@@ -22,11 +22,13 @@ import okhttp3.logging.HttpLoggingInterceptor
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
+    private const val baseUrl = "https://api.mercadolibre.com/sites/MLA/";
+
     @Provides
     @Singleton
     fun provideRetrofitClient (httpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://api.mercadolibre.com/sites/MLA/") //TODO eusebio implement correct url
+            .baseUrl(baseUrl)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .client(httpClient)

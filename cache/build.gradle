@@ -38,8 +38,8 @@ dependencies {
     kapt "androidx.room:room-runtime:$rootProject.room_version"
     kapt "androidx.room:room-compiler:$rootProject.room_version"
     implementation "androidx.room:room-ktx:$rootProject.room_version"
-    kapt "android.arch.persistence.room:compiler:1.1.1"
-    implementation 'com.google.guava:guava:27.0.1-android'
+    kapt "android.arch.persistence.room:compiler:$rootProject.archTestingVersion"
+    implementation "com.google.guava:guava:$rootProject.guava_version"
 
     implementation 'com.google.dagger:hilt-android:2.38.1'
     kapt 'androidx.hilt:hilt-compiler:1.0.0'

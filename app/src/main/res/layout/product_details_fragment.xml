@@ -121,16 +121,5 @@
 
         </androidx.core.widget.NestedScrollView>
 
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/buy_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="8dp"
-            android:contentDescription="buy"
-            android:src="@drawable/ic_baseline_buy_24"
-            android:theme="@style/Theme.CandidateML"/>
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>
